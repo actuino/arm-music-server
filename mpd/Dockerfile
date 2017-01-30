@@ -5,14 +5,14 @@ RUN apk add --no-cache ca-certificates
 
 # docker run -p 6600:6600 --net arm_music --name mpd -d -v /var/lib/mpd:/var/lib/mpd actuino/mpd-armhf:dev
 
-ENV MPD_VERSION 0.19.12-r0
-ENV MPC_VERSION 0.27-r0
+#ENV MPD_VERSION 0.19.12-r0
+#ENV MPC_VERSION 0.27-r0
 
 ARG user=mpd
 ARG group=audio
 
 RUN set -ex \
-    && apk add __no-cache mpd="$MPD_VERSION"  mpc="$MPC_VERSION" \
+    && apk add --no-cache mpd mpc \
     && rm -rf /var/cache/apk/*
 
 RUN mkdir -p /var/lib/mpd/music \
