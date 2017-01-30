@@ -23,7 +23,7 @@ RUN mkdir -p /var/lib/mpd/music \
     && chown -R ${user}:${group} /var/log/mpd/mpd.log
 
 # Declare a music , playlists and database volume (state, tag_cache and sticker.sql)
-VOLUME ["/var/lib/mpd"]
+VOLUME ["/var/lib/mpd/music", "/var/lib/mpd/playlists", "/var/lib/mpd/database"]
 COPY mpd.conf /etc/mpd.conf
 
 # Entry point for mpc update and stuff
