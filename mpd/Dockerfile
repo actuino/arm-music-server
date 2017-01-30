@@ -25,8 +25,10 @@ RUN mkdir -p /var/lib/mpd/music \
 VOLUME ["/var/lib/mpd/music", "/var/lib/mpd/playlists"]
 COPY mpd.conf /etc/mpd.conf
 
+RUN chown -R ${user}:${group} /var/lib/mpd
+
 # Entry point for mpc update and stuff
 EXPOSE 6600
 
-#CMD ["mpd", "--stdout", "--no-daemon"]
 CMD ["/bin/sh"]
+#CMD ["mpd", "--stdout", "--no-daemon"]
