@@ -1,4 +1,4 @@
 # YMPD for ARM
 
-A Docker image for ARM arch.
+A Docker YMPD image for ARM arch.
 Tested with an Orange Pi Zero.

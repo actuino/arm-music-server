@@ -3,7 +3,7 @@ MAINTAINER @actuino
 
 RUN apk add --no-cache ca-certificates
 
-# docker run -p 8080:8080 --net arm_music --name=ympd -d actuino/ympd-armhf:dev
+# docker run -p 8080:8080 --net arm_music --name ympd -d actuino/ympd-armhf:dev
 
 ENV YMPD_VERSION 1.3.0
 
