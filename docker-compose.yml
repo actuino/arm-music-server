@@ -9,7 +9,8 @@ services:
     networks:
       - music_stack
     volumes:
-      - /var/lib/mpd:/var/lib/mpd
+      - /var/lib/mpd/music:/var/lib/mpd/music
+      - /var/lib/mpd/playlists:/var/lib/mpd/playlists
 
   ympd:
     image: actuino/ympd-armhf:dev

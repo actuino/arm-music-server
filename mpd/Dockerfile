@@ -3,7 +3,7 @@ MAINTAINER @actuino
 
 RUN apk add --no-cache ca-certificates
 
-# docker run -p 6600:6600 --net arm_music --name mpd -d -v /var/lib/mpd:/var/lib/mpd actuino/mpd-armhf:dev
+# docker run -p 6600:6600 --net arm_music --name mpd -d -v /var/lib/mpd/music:/var/lib/mpd/music -v /var/lib/mpd/playlists:/var/lib/mpd/playlists actuino/mpd-armhf:dev
 
 #ENV MPD_VERSION 0.19.12-r0
 #ENV MPC_VERSION 0.27-r0
@@ -22,8 +22,7 @@ RUN mkdir -p /var/lib/mpd/music \
     && chown -R ${user}:${group} /var/lib/mpd \
     && chown -R ${user}:${group} /var/log/mpd/mpd.log
 
-# Declare a music , playlists and database volume (state, tag_cache and sticker.sql)
-VOLUME ["/var/lib/mpd/music", "/var/lib/mpd/playlists", "/var/lib/mpd/database"]
+VOLUME ["/var/lib/mpd/music", "/var/lib/mpd/playlists"]
 COPY mpd.conf /etc/mpd.conf
 
 # Entry point for mpc update and stuff
