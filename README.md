@@ -2,6 +2,12 @@
 A music server stack with Docker on ARM
 WIP, don't use yet.
 
+Based upon armhf/alpine to reduce the images sizes.
+
+Inspired by https://github.com/VITIMan/docker-music-stack and @alexellisuk
+
+The goal is to build a connected music box on a cheap Orange Pi zero, with the help of Docker.
+
 ## Applications used in the stack
 
 - [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki)
@@ -11,7 +17,8 @@ MPD outputs audio to the Pi audio output.
 
 ## Music files
 
-    Create a /var/lib/mpd/music
+    Create a /var/lib/mpd/music and put your files in
+    Create an empty /var/lib/mpd/playlists
 
 ## Execution
 
