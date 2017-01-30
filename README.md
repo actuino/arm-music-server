@@ -15,8 +15,10 @@ MPD outputs audio to the Pi audio output.
 
 ## Execution
 
-You have two options to execute all the stack, using [docker-compose](https://docs.docker.com/compose/) or
-launching the containers one-by-one, your choice. 
+You have three options to execute all the stack :
+* using [docker-compose](https://docs.docker.com/compose/)
+* the run.sh script
+* launching the containers one-by-one
 
 The default access to applications are:
 
@@ -29,5 +31,10 @@ Clone this repo. **Edit docker-compose.yml** and add your host volumes for your 
 
     docker-compose up -d
     
-    
 How to install [docker-compose](https://github.com/docker/compose/releases)
+
+### run.sh script
+
+    ./run.sh
+    
+### one container at a time

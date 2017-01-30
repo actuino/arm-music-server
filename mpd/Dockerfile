@@ -5,9 +5,6 @@ RUN apk add --no-cache ca-certificates
 
 # docker run -p 6600:6600 --net arm_music --name mpd -d -v /var/lib/mpd/music:/var/lib/mpd/music -v /var/lib/mpd/playlists:/var/lib/mpd/playlists actuino/mpd-armhf:dev
 
-#ENV MPD_VERSION 0.19.12-r0
-#ENV MPC_VERSION 0.27-r0
-
 ARG user=mpd
 ARG group=audio
 
@@ -25,10 +22,10 @@ RUN mkdir -p /var/lib/mpd/music \
 VOLUME ["/var/lib/mpd/music", "/var/lib/mpd/playlists"]
 COPY mpd.conf /etc/mpd.conf
 
-RUN chown -R ${user}:${group} /var/lib/mpd
+#RUN chown -R ${user}:${group} /var/lib/mpd
 
 # Entry point for mpc update and stuff
 EXPOSE 6600
 
-CMD ["/bin/sh"]
-#CMD ["mpd", "--stdout", "--no-daemon"]
+#CMD ["/bin/sh"]
+CMD ["mpd", "--stdout", "--no-daemon"]
